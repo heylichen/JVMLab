@@ -1,4 +1,4 @@
-package org.jprofiler.samples;
+package org.jprofiler.samples.impl3;
 
 public class BailoutFuture {
     private double iterationsPerSecond;

@@ -1,4 +1,4 @@
-package org.jprofiler.samples;
+package org.jprofiler.samples.impllc;
 
 import java.util.concurrent.atomic.AtomicLong;
 

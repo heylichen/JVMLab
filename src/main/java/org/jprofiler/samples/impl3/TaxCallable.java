@@ -1,4 +1,4 @@
-package org.jprofiler.samples;
+package org.jprofiler.samples.impl3;
 
 import java.util.List;
 import java.util.Random;
@@ -6,7 +6,7 @@ import java.util.concurrent.Callable;
 
 public class TaxCallable implements Callable<BailoutFuture> {
     private static long runTimeInMillis = BailoutMain.TEST_TIME;
-    final private static Random generator = BailoutMain.random;
+    final private static ThreadLocal<Random> generator = BailoutMain.random;
     private long nullCounter, recordsRemoved, newRecordsAdded;
     private int index;
     private String taxPayerId;
@@ -73,7 +73,7 @@ public class TaxCallable implements Callable<BailoutFuture> {
 // update a TaxPayer's DB record
             tpr = db.get(taxPayerId);
             if (tpr != null) {
-                long tax = generator.nextInt(10) + 15;
+                long tax = generator.get().nextInt(10) + 15;
                 tpr.taxPaid(tax);
             }
         }

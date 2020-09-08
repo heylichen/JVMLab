@@ -1,4 +1,4 @@
-package org.jprofiler.samples;
+package org.jprofiler.samples.impllc;
 
 public interface TaxPayerBailoutDB {
     static final int NUMBER_OF_RECORDS_DESIRED = 2 * 1000000;

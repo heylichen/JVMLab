@@ -1,15 +1,13 @@
-package org.jprofiler.samples;
+package org.jprofiler.samples.impllc;
 
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class TaxPayerBailoutDbImpl implements TaxPayerBailoutDB {
     private final Map<String, TaxPayerRecord> db;
 
     public TaxPayerBailoutDbImpl(int size) {
-        db = Collections.synchronizedMap(
-                new HashMap<String, TaxPayerRecord>(size));
+        db = new ConcurrentHashMap<>(size);
     }
 
     @Override

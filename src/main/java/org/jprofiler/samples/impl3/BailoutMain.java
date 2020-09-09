@@ -2,8 +2,6 @@ package org.jprofiler.samples.impl3; /**
  * An example program to illustrate lock contention.
  */
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.*;
@@ -11,7 +9,7 @@ import java.util.concurrent.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@Slf4j
+
 public class BailoutMain {
     final public static int TEST_TIME = 240 * 1000;
     final public static ThreadLocal<Random> random = new ThreadLocal<Random>() {

@@ -2,8 +2,6 @@ package org.jprofiler.samples.impl2; /**
  * An example program to illustrate lock contention.
  */
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.*;
@@ -11,7 +9,7 @@ import java.util.concurrent.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@Slf4j
+
 public class BailoutMain {
     final public static int TEST_TIME = 240 * 1000;
     final public static Random random =
@@ -36,8 +34,8 @@ public class BailoutMain {
 
     public static void main(String[] args) throws Exception {
         System.in.read();
-//        final int numberOfThreads = Runtime.getRuntime().availableProcessors();
-        final int numberOfThreads = 8;
+        final int numberOfThreads = Runtime.getRuntime().availableProcessors();
+//        final int numberOfThreads = 8;
         final int dbSize = TaxPayerBailoutDB.NUMBER_OF_RECORDS_DESIRED;
         final int taxPayerListSize = dbSize / numberOfThreads;
         System.out.println("Number of threads to run concurrently : " +

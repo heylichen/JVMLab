@@ -1,7 +1,5 @@
 package org.jprofiler.samples.impl2;
 
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
